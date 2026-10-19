@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>溫子祺 Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600&family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#d8e7f3;--paper:#fbf8ef;--ink:#2f3b45;--sage:#7d9c87;--sage2:#d6e3d0;--pink:#f3c8d1;--dn:#a9c5de;--dn2:#cfe1f0;--line:rgba(47,59,69,.38);box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1f2521;--paper:#2b342e;--ink:#ecebdc;--sage:#a9c2b0;--sage2:#3b4a3f;--pink:#6b4a53;--dn:#3e5568;--dn2:#4a6479;--line:rgba(236,235,220,.38)}}
+:root[data-theme="dark"]{--dn:#3e5568;--dn2:#4a6479;--bg:#1f2521;--paper:#2b342e;--ink:#ecebdc;--sage:#a9c2b0;--sage2:#3b4a3f;--pink:#6b4a53;--line:rgba(236,235,220,.38)}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 60px)}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.9 "Noto Serif TC","Songti TC","PMingLiU",serif;background-image:radial-gradient(var(--line) .6px,transparent .8px);background-size:22px 22px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+.en{font-family:"Cormorant Garamond",Georgia,serif;letter-spacing:.05em}
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;display:flex;gap:8px;overflow-x:auto;padding:10px 14px;background:var(--bg);border-bottom:1px solid var(--line)}
+nav a{flex:none;padding:3px 16px;border:1px solid var(--ink);border-radius:20px 20px 4px 4px;color:var(--ink);text-decoration:none;font-size:13px}
+nav a.on{background:var(--sage);border-color:var(--sage);color:var(--paper)}
+.hero{min-height:88vh;display:grid;place-items:center;padding:34px 16px 24px;overflow:hidden;position:relative;text-align:center}
+.stage{position:relative;width:min(80vw,360px);height:480px}
+.arch{position:absolute;inset:0;border:1.5px solid var(--ink);border-radius:999px 999px 0 0;background:var(--paper)}
+.arch.b{inset:-14px -14px 0;border-color:var(--line);background:none}
+.ttl{position:absolute;left:0;right:0;top:40%;transform:translateY(-50%)}
+.ttl h1{margin:0;font-size:clamp(40px,12vw,58px);font-weight:600;color:var(--sage);line-height:1.1}
+.lab{display:inline-block;margin-top:14px;padding:5px 16px;border:1px solid var(--ink);border-radius:8px;outline:1px solid var(--line);outline-offset:4px;font-size:18px}
+.ttl p{margin:18px 14px 0;font-size:13px;line-height:1.7}
+.d{position:absolute;transition:translate .25s ease-out}
+.note{padding:8px 14px;background:var(--paper);border:1px solid var(--line);box-shadow:3px 4px 0 var(--sage2);font-size:13px;line-height:1.5}
+.note::before,.tp::before{content:"";position:absolute;top:-9px;left:50%;width:52px;height:16px;transform:translateX(-50%) rotate(-4deg);background:var(--pink);opacity:.9}
+.n1{left:-26px;bottom:60px;rotate:-6deg}.n2{right:-22px;bottom:18px;rotate:5deg;background:var(--pink)}.n2::before{background:var(--sage2)}
+.sp1{left:14px;top:34px;font-size:30px;color:var(--sage)}.sp2{right:6px;top:120px;font-size:20px;color:var(--ink)}
+.dot{right:30px;top:-10px;width:54px;height:54px;border-radius:50%;background:var(--pink)}
+.hint{position:absolute;bottom:14px;left:0;right:0;font-size:12px;opacity:.65}
+section{max-width:860px;margin:0 auto;padding:56px 18px 20px}
+h2{margin:0;font-size:clamp(36px,10vw,52px);font-weight:500;color:var(--sage);line-height:1.2}
+.sub{font-size:13px;opacity:.7;margin:0 0 22px}
+.card{position:relative;background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:18px;box-shadow:4px 5px 0 var(--sage2)}
+.card h3{margin:0 0 4px;font-size:16px}
+.cols{display:grid;gap:20px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));margin-top:22px}
+.cols .card:nth-child(odd){rotate:-1deg}.cols .card:nth-child(even){rotate:1deg}
+.lic{margin:10px 0 0;padding-left:18px;font-size:13px}
+details{position:relative;margin-left:8px;padding:0 0 20px 22px;border-left:1.5px solid var(--line)}
+details::before{content:"";position:absolute;left:-7.5px;top:7px;width:13px;height:13px;border-radius:50%;background:var(--bg);border:1.5px solid var(--ink)}
+details[open]::before{background:var(--sage);border-color:var(--sage)}
+summary{cursor:pointer;list-style:none;font-weight:600}summary::-webkit-details-marker{display:none}
+summary small{display:block;font-weight:400;opacity:.7;font-size:13px}
+details ul,.dlg ul{margin:8px 0 0;padding-left:18px}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.tabs button,.btn{font:inherit;font-size:13px;padding:3px 16px;border:1px solid var(--ink);border-radius:20px;background:var(--paper);color:var(--ink);cursor:pointer}
+.tabs button.on{background:var(--sage);border-color:var(--sage);color:var(--paper)}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:26px 22px}
+.pol{display:block;text-align:left;font:inherit;color:inherit;background:var(--paper);padding:13px 13px 16px;border:1px solid var(--line);box-shadow:4px 5px 0 var(--sage2);cursor:pointer;rotate:var(--r);transition:rotate .2s,translate .2s}
+.pol:hover,.pol:focus-visible{rotate:0deg;translate:0 -6px}
+.pol .pic{aspect-ratio:4/3;display:grid;place-items:center;background:var(--c);font-size:34px;margin-bottom:10px;color:var(--ink)}
+.pol b{display:block;font-size:15px;line-height:1.5}.pol small{opacity:.7}
+.dlg{background:var(--paper);color:var(--ink);border:1.5px solid var(--ink);border-radius:6px;max-width:min(92vw,520px);max-height:86vh;padding:24px;overflow:auto}
+.dlg::backdrop{background:rgba(30,36,31,.55)}
+.dlg h3{margin:0;font-size:19px}.dlg .nt{margin-top:12px;padding:10px 14px;background:var(--sage2);border-radius:4px;font-size:14px}
+.dlg a{color:var(--sage);font-weight:600}.dlg .btn{display:block;margin:16px 0 0 auto}
+.board{display:flex;flex-wrap:wrap;gap:12px;padding:20px 14px;background:var(--paper);border:1px solid var(--line);border-radius:4px;box-shadow:4px 5px 0 var(--sage2)}
+.st{padding:5px 15px;background:var(--pink);border:1px solid var(--line);font-size:13px;cursor:grab;user-select:none;touch-action:none;position:relative}
+.st.g{background:var(--sage2)}.st:nth-child(3n){rotate:-3deg}.st:nth-child(3n+1){rotate:2deg}.st.drag{cursor:grabbing;z-index:3;box-shadow:4px 6px 0 var(--line)}
+.ct{text-align:center;padding-bottom:70px}.ct h2{font-size:clamp(30px,8vw,44px)}
+.ct a.m{display:inline-block;margin:6px 0 14px;color:var(--ink);font-size:17px}
+.sp{position:fixed;z-index:20;pointer-events:none;color:var(--sage);translate:-50% -50%;animation:sp .9s forwards}
+@keyframes sp{to{transform:translateY(-34px) scale(1.9) rotate(90deg);opacity:0}}
+a:focus-visible,button:focus-visible,summary:focus-visible{outline:2px solid var(--sage);outline-offset:3px}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+.hx{padding-top:30px;min-height:0}.hx .stage{display:none}
+.nb{width:min(92vw,400px);position:relative}
+.top{height:270px;background:var(--pink);border:1px solid var(--line);border-radius:6px 6px 0 0;position:relative;overflow:hidden}
+.top::before{content:"";position:absolute;right:-40px;top:-30px;width:190px;height:190px;border-radius:50%;background:var(--sage2);opacity:.85}
+.pt{left:18px;top:26px;width:42%;height:64%;padding:12px;background:var(--sage);color:var(--paper);font-size:12px;line-height:1.5;text-align:left;rotate:-3deg;box-shadow:3px 4px 0 var(--line)}
+.pt b{display:block;font-size:28px;margin-top:38px;line-height:1.1}
+.win{right:20px;top:46px;width:36%;height:80%;background:var(--paper);border:1.5px solid var(--ink);border-radius:999px 999px 0 0;display:grid;place-items:end center;padding-bottom:18px;font-size:20px;line-height:1.1;color:var(--ink)}
+.vt{left:47%;bottom:14px;writing-mode:vertical-rl;font-size:11px;letter-spacing:.2em;color:var(--ink)}
+.rings{display:flex;justify-content:space-around;margin:-17px 12px 0;position:relative;z-index:2}
+.rings i{width:12px;height:36px;border-radius:8px;background:linear-gradient(90deg,#8d999f,#fff 50%,#8d999f);border:1px solid var(--line)}
+.pg{background:var(--paper);border:1px solid var(--line);border-top:0;padding:30px 20px 24px;text-align:center;border-radius:0 0 6px 6px;box-shadow:5px 6px 0 var(--sage2)}
+.pg h1{margin:0;font-size:clamp(46px,14vw,70px);line-height:1;color:var(--ink);font-weight:600;text-transform:uppercase}
+.pg p{margin:12px 0 0;font-size:14px;line-height:1.8}.pg small{display:block;margin-top:14px;font-size:12px;opacity:.65}
+h2{text-transform:uppercase;color:var(--ink);letter-spacing:.04em}h2::after{content:"✦";color:var(--dn);margin-left:.3em;font-size:.55em}
+.dn{max-width:none;margin:30px 0;padding:60px max(18px,calc((100% - 824px)/2));background:repeating-linear-gradient(45deg,transparent 0 3px,rgba(255,255,255,.14) 3px 4px),var(--dn);clip-path:polygon(0 8px,6% 0,13% 9px,21% 2px,29% 8px,38% 0,47% 9px,56% 2px,65% 8px,74% 0,83% 9px,92% 2px,100% 8px,100% calc(100% - 8px),93% 100%,85% calc(100% - 9px),76% calc(100% - 2px),67% calc(100% - 8px),58% 100%,49% calc(100% - 9px),40% calc(100% - 2px),31% calc(100% - 8px),22% 100%,13% calc(100% - 9px),5% calc(100% - 3px),0 calc(100% - 8px))}
+.dn h2::after{color:var(--paper)}.dn details::before{background:var(--dn)}.dn details[open]::before{background:var(--paper)}
+summary::after{content:"＋";float:right}details[open] summary::after{content:"－"}
+.pol{position:relative}.pol::before{content:"";position:absolute;top:-16px;left:18px;width:18px;height:42px;border:2px solid #9aa5ab;border-radius:10px;z-index:1}
+.st:nth-child(4n+2){background:var(--dn2)}
+.nb{display:none}.tl{text-align:center;max-width:420px;width:100%}
+.big{font-size:clamp(52px,16vw,84px);line-height:1;margin:0;color:#14181b;font-weight:500;text-transform:uppercase}.big::after{content:none}
+.hl{display:inline-block;margin-top:8px;padding:0 10px;background:var(--dn);color:#14181b;font-size:20px}
+.tl p{margin:10px 0 6px;font-size:14px}
+.cl{position:relative;height:250px;margin:4px 0 16px}
+.lace{fill:none;stroke:#fff;stroke-width:3.2;stroke-linejoin:round;stroke-linecap:round;filter:drop-shadow(0 2px 1.5px rgba(40,70,110,.4))}
+.la{left:50%;top:0;margin-left:-80px;width:160px}.lt1{left:4%;top:44px;width:46px}.lt2{right:4%;top:24px;width:46px}.lq{right:15%;bottom:0;width:62px}
+.nt2{left:50%;top:118px;width:156px;margin-left:-78px;background:var(--paper);color:#2f3b45;padding:10px;font-size:12px;line-height:1.6;rotate:-4deg;box-shadow:3px 4px 0 var(--line)}
+.btn,.mt{background:linear-gradient(#f3f5f6,#b8c1c7);border:1px solid #9aa5ab;border-radius:8px;box-shadow:0 2px 0 #8a949a;color:#1d2226}
+.mt{display:inline-block;padding:6px 36px;text-decoration:none;font-size:15px}
+.rl{display:block;margin:6px auto;width:min(88%,420px);height:auto}
+.dn{position:relative}.sq{position:absolute;right:max(18px,calc((100% - 824px)/2));top:26px;width:62px}
+#about .card{text-align:center}
+#projects .grid{background:linear-gradient(135deg,#eef1f3,#b7c1c8);border:6px solid #d3d9dd;border-radius:28px;padding:28px 20px;box-shadow:inset 0 0 0 3px #9aa5ab}
+</style>
+</head>
+<body>
+<nav id="nv"><a href="#top">Home</a><a href="#about">About</a><a href="#work">Experience</a><a href="#projects">Projects</a><a href="#skills">Skills</a><a href="#contact">Contact</a></nav>
+
+<header class="hero hx" id="top"><svg width="0" height="0" style="position:absolute"><defs><g id="la"><path d="M10 150V70Q10 10 60 8Q110 10 110 70V150Z"/><path d="M20 150V72Q20 22 60 18Q100 22 100 72V150"/><path d="M60 122C18 92 30 50 60 66C90 50 102 92 60 122Z"/><path d="M60 66C52 50 38 54 44 66M60 66C68 50 82 54 76 66"/><path d="M30 150A30 30 0 0 1 90 150M60 150V120M60 150L42 124M60 150L78 124M60 150L30 134M60 150L90 134"/><circle cx="60" cy="13" r="3.5"/></g><g id="lt"><rect x="3" y="3" width="34" height="124" rx="6"/><path d="M20 12V118"/><ellipse cx="20" cy="32" rx="9" ry="11"/><ellipse cx="20" cy="66" rx="9" ry="11"/><ellipse cx="20" cy="100" rx="9" ry="11"/></g><g id="ls"><rect x="4" y="4" width="92" height="92" rx="9"/><circle cx="50" cy="50" r="8"/><ellipse cx="50" cy="50" rx="5" ry="27"/><ellipse cx="50" cy="50" rx="5" ry="27" transform="rotate(45 50 50)"/><ellipse cx="50" cy="50" rx="5" ry="27" transform="rotate(90 50 50)"/><ellipse cx="50" cy="50" rx="5" ry="27" transform="rotate(135 50 50)"/><circle cx="14" cy="14" r="6"/><circle cx="86" cy="14" r="6"/><circle cx="14" cy="86" r="6"/><circle cx="86" cy="86" r="6"/></g><g id="lr"><path d="M2 14Q26 4 50 14T100 14T150 14T200 14T250 14T300 14T350 14T398 14M2 40Q26 30 50 40T100 40T150 40T200 40T250 40T300 40T350 40T398 40"/><path d="M100 14V40M200 14V40M300 14V40"/><circle cx="50" cy="27" r="8"/><circle cx="150" cy="27" r="8"/><circle cx="250" cy="27" r="8"/><circle cx="350" cy="27" r="8"/></g></defs></svg><div class="tl"><h1 class="en big">Portfolio</h1><span class="hl">溫子祺 Tzu-Chi Wen</span><p>AI 商業視覺・專案企劃<br>品牌行銷 × 影像內容</p><div class="cl"><svg class="lace d la" data-d="-14" viewBox="0 0 120 160"><use href="#la"/></svg><svg class="lace d lt1" data-d="22" viewBox="0 0 40 130"><use href="#lt"/></svg><svg class="lace d lt2" data-d="-26" viewBox="0 0 40 130"><use href="#lt"/></svg><svg class="lace d lq" data-d="30" viewBox="0 0 100 100"><use href="#ls"/></svg><div class="d nt2" data-d="18">Hello ✦ 我是子祺<br>從消費者回饋出發，<br>把賣點變成內容與視覺</div></div><a class="btn mt" href="#projects">看作品</a></div><div class="nb"><div class="top"><div class="d pt" data-d="-16"><small>Planner</small><b class="en">Irene</b><span>AI 商業視覺 專案企劃</span></div><div class="d win en" data-d="24">Tzu-Chi<br>Wen</div><div class="d vt" data-d="-28">Selected<br>works</div></div><div class="rings"><i></i><i></i><i></i><i></i><i></i><i></i></div><div class="pg"><h1 class="en">Portfolio</h1><p>溫子祺<br>AI 商業視覺・專案企劃<br>品牌行銷 × 影像內容</p><small>Save for later ✦ 在畫面上移動或點一下</small></div></div>
+<div class="stage">
+<div class="arch b"></div><div class="arch"></div>
+<div class="ttl"><h1 class="en">Portfolio</h1><span class="lab">溫子祺 Tzu-Chi Wen</span><p>AI 商業視覺・專案企劃<br>品牌行銷 × 影像內容</p></div>
+<span class="d sp1" data-d="46">✦</span><span class="d sp2" data-d="-30">✦</span><span class="d dot" data-d="-22"></span>
+<div class="d note n1" data-d="34">從消費者回饋出發<br>把賣點變成內容與視覺</div>
+<div class="d note n2" data-d="-38">想法 → 企劃 → 成果</div>
+<div class="hint">在畫面上移動或點一下 ✦</div>
+</div>
+</header>
+
+<section id="about" class="dn">
+<svg class="lace sq" viewBox="0 0 100 100"><use href="#ls"/></svg><h2 class="en">About</h2><p class="sub">關於我</p>
+<div class="card tp">
+<p>我是子祺，ENTJ 型人格，擅長目標規劃、資源整合與專案推進，樂於挑戰新事物，並在實踐中持續學習與成長。面對不同任務，能快速掌握需求、主動尋找解決方案，並透過時間管理與溝通協調，確保工作有效推進。具備良好的跨角色協作能力與執行力，重視團隊合作與細節品質，能靈活應對不同挑戰，將想法轉化為具體成果。</p>
+<p style="margin:0;font-size:13px">中國文化大學 大眾傳播學系（2019-2023）／內思高工 多媒體設計系（2016-2019）</p>
+<ul class="lic"><li>印前製程圖文組版 乙級技術士（2019.03）、丙級技術士（2018.03）</li><li>Adobe Photoshop、Adobe Flash 國際認證</li></ul>
+</div>
+<div class="cols">
+<div class="card"><h3>消費者洞察</h3>彙整用戶評論與私訊回饋，掌握消費者對商品的反應。</div>
+<div class="card"><h3>賣點轉化</h3>從品牌 BRIEF 提煉商品賣點，轉化為腳本、視覺與拍攝重點。</div>
+<div class="card"><h3>專案推進</h3>從排程、成本表、合約到交付一手串聯，與設計及影像團隊協作。</div>
+</div>
+</section>
+
+<section id="work" class="dn">
+<h2 class="en">Experience</h2><p class="sub">工作經驗（點選展開）</p>
+<details open><summary>勛量國際有限公司｜AI 商業視覺／專案企劃<small>2025－至今</small></summary><ul>
+<li>規劃並執行 AI 商業影片、品牌形象影片與短影音，從創意發想、腳本到成品交付全流程負責</li>
+<li>主責客戶需求溝通、提案與報價，將品牌需求轉化為可執行的專案規劃與視覺方向</li>
+<li>運用 AI 影像與影片生成工具，產出房地產、品牌、餐飲等產業的視覺內容</li>
+<li>將商品賣點轉化為視覺與影片腳本，提升商品溝通效率</li>
+<li>統籌設計與影像製作團隊，管控進度與品質，確保專案準時交付</li></ul></details>
+<details><summary>尚谷數位行銷公司｜口碑行銷、網紅合作、專案管理<small>2022－2024</small></summary><ul>
+<li>執行口碑行銷 SOP 全流程：名單建議、數據彙整、上刊對稿與結案報告</li>
+<li>蒐集與篩選網紅名單、擬定合作策略並協調執行，提升品牌在社群的曝光與互動</li>
+<li>協助邀約、成本表、合約、排程等 PM 作業；撰寫品牌 BRIEF、腳本與拍攝重點表，負責過稿、改稿溝通與結案彙整</li>
+<li>合作品牌：可口可樂、必勝客、UNIQLO</li></ul></details>
+<details><summary>海肯商行｜門市及電商運營、社群小編、活動企劃</summary><ul>
+<li>管理門市與電商平台、處理訂單；經營社群帳號並回應用戶留言與私訊</li>
+<li>彙整用戶評論與私訊回饋，掌握消費者對商品的反應</li>
+<li>規劃並執行各類活動，負責活動流程所有階段</li></ul></details>
+<details><summary>聯合報｜新聞部影音中心｜影音編輯</summary><ul>
+<li>管理 YouTube 頻道（影片上傳、播放列表、標籤設定），優化標題與下標以提升點擊率</li>
+<li>剪輯影片，搭配轉場效果與音樂，確保內容流暢</li></ul></details>
+</section>
+
+<svg class="lace rl" viewBox="0 0 400 50"><use href="#lr"/></svg><section id="projects">
+<h2 class="en">Projects</h2><p class="sub">作品與企劃（點卡片看詳細）</p>
+<div class="tabs" id="tb"><button class="on">全部</button><button>品牌行銷</button><button>AI 視覺</button><button>影音企劃</button><button>活動企劃</button></div>
+<div class="grid" id="g"></div>
+</section>
+<dialog class="dlg" id="dl"><div id="dc"></div></dialog>
+
+<svg class="lace rl" viewBox="0 0 400 50"><use href="#lr"/></svg><section id="skills">
+<h2 class="en">Skills</h2><p class="sub">技能貼紙（可以拖曳）</p>
+<div class="board" id="bd"></div>
+</section>
+
+<svg class="lace rl" viewBox="0 0 400 50"><use href="#lr"/></svg><section id="contact" class="ct">
+<h2 class="en">Let’s work together</h2><p class="sub">歡迎來信聊聊</p>
+<a class="m" href="mailto:RkarryJ0806@gmail.com">RkarryJ0806@gmail.com</a><br>
+<button class="btn" id="cp">複製 Email</button>
+</section>
+
+<script>
+const P=[
+{t:"口碑行銷與網紅合作",k:"品牌行銷",c:"KOL",d:"尚谷數位行銷公司，2022-2024",b:["執行口碑行銷 SOP：名單建議、數據彙整、上刊對稿、結案報告","蒐集與篩選網紅名單、擬定合作策略並協調執行，提升品牌曝光與互動","合作品牌：可口可樂、必勝客、UNIQLO"],n:"從品牌 BRIEF 提煉商品賣點，轉化為網紅腳本與拍攝重點。"},
+{t:"AI 商業影片與視覺內容",k:"AI 視覺",c:"AI",d:"勛量國際有限公司，2025 至今",b:["企劃並執行 AI 商業影片、品牌形象影片與短影音","協助房地產、品牌、餐飲等產業製作 AI 視覺內容","從客戶需求溝通、提案報價、腳本企劃到製作交付一手串聯"],n:"將商品賣點轉化為視覺與影片腳本，提升商品溝通效率。"},
+{t:"《輕描淡寫》MV 拍攝企劃",k:"影音企劃",c:"MV",d:"Home Crew，2023",l:"https://www.youtube.com/watch?v=cZgQjJI5ZZQ",b:["風格定位：日系慵懶感","劇情：以第三者視角呈現一對男女相愛、爭吵拉扯到分開，男方回憶過去的美好、悔恨不已","擔任製片與場記，負責編列預算、找場地、選歌"],n:"完整影片的背後來自團隊的努力。拍攝角度、燈光、天氣都會影響剪輯成果，這次更懂得團隊需要分工合作，讓擅長的人做擅長的事。"},
+{t:"居家 Live Show 實境錄製",k:"影音企劃",c:"LIVE",d:"#開發潛力的歌手",b:["企劃發想：邀請表演嘉賓在居家空間以個人風格演出，傳達「一切都從家開始」的理念","節目內容：以劇情與道具穿插嘉賓經歷，最後安排一小段訪談","呈現方式：IG 短片預告、YouTube 4-5 分鐘節目","負責活動發想、攝錄與企劃"],n:"與嘉賓接洽需要良好的溝通與協調能力，才能平衡兩方都想要的成果；現場融洽的團隊氛圍也讓工作效率顯著提升。"},
+{t:"《嘻進政策》活動展演企劃",k:"活動企劃",c:"HIPHOP",d:"活動發想、統籌、公關",l:"https://www.youtube.com/watch?v=crSvmkmPoPM",b:["進度排程、製作活動大表、邀請嘉賓","撰寫文案與宣傳文，經營粉專與粉專客服","掌控流程並聯繫表演人員","主視覺與票根以金屬元素塑造嘻哈派對的氣勢"],n:"策劃時思考如何充分利用身邊資源，讓活動看起來更宏大，也要準備備用計畫應對突發狀況。實戰讓我更快成長，凝聚共識、積極參與，才能讓活動圓滿。"},
+{t:"海肯商行 HK07 活動規劃與執行",k:"活動企劃",c:"HK07",d:"任職期間，2022-2023",b:["協助活動流程規劃、社群宣傳規劃與前置作業，活動當天擔任現場場控","參與活動：大吸哈時代、Ｅ次元、法國海肯第四屆天下第一舞蹈大會、海肯石頭人電影馬拉松、《妄年會》、久保田、市集擺攤"],n:"多次策劃實施活動，鍛鍊了團隊合作與彈性溝通的能力。"}
+];
+const $=s=>document.querySelector(s),g=$("#g"),dl=$("#dl"),dc=$("#dc");
+function draw(f){g.innerHTML="";P.forEach((p,i)=>{if(f!=="全部"&&p.k!==f)return;const b=document.createElement("button");b.className="pol";b.style.setProperty("--r",(i%2?1.8:-1.8)+"deg");b.style.setProperty("--c",i%2?"var(--pink)":"var(--sage2)");b.innerHTML='<div class="pic en">'+p.c+"</div><b>"+p.t+"</b><small>"+p.k+"｜"+p.d+"</small>";b.onclick=()=>show(p);g.append(b)})}
+function show(p){dc.innerHTML="<h3>"+p.t+'</h3><p class="sub">'+p.k+"｜"+p.d+"</p><ul>"+p.b.map(x=>"<li>"+x+"</li>").join("")+'</ul><div class="nt">心得：'+p.n+"</div>"+(p.l?'<p><a href="'+p.l+'" target="_blank" rel="noopener">觀看影片</a></p>':"")+'<button class="btn" onclick="dl.close()">關閉</button>';dl.showModal()}
+dl.onclick=e=>{if(e.target===dl)dl.close()};
+document.querySelectorAll("#tb button").forEach(b=>b.onclick=()=>{document.querySelectorAll("#tb button").forEach(x=>x.classList.remove("on"));b.classList.add("on");draw(b.textContent)});
+draw("全部");
+const S="AI 影片製作,AIGC,AI 視覺生成,短影音企劃,專案管理,客戶提案,客戶溝通,腳本企劃,活動規劃,文案編輯,媒體公關,品牌內容製作,影音剪輯,Illustrator,Photoshop,Final Cut Pro,InDesign,剪映".split(",");
+S.forEach((s,i)=>{const e=document.createElement("span");e.className="st"+(i>12?" g":"");e.textContent=s;let sx,sy,ox=0,oy=0;e.onpointerdown=ev=>{e.setPointerCapture(ev.pointerId);sx=ev.clientX-ox;sy=ev.clientY-oy;e.classList.add("drag")};e.onpointermove=ev=>{if(e.hasPointerCapture(ev.pointerId)){ox=ev.clientX-sx;oy=ev.clientY-sy;e.style.translate=ox+"px "+oy+"px"}};e.onpointerup=()=>e.classList.remove("drag");$("#bd").append(e)});
+const hero=$("#top"),ds=document.querySelectorAll(".d");
+hero.addEventListener("pointermove",e=>{const r=hero.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;ds.forEach(el=>{const k=+el.dataset.d;el.style.translate=x*k+"px "+y*k+"px"})});
+hero.addEventListener("pointerleave",()=>ds.forEach(el=>el.style.translate="0 0"));
+document.addEventListener("pointerdown",e=>{if(e.target.closest("button,a,summary,.st,dialog,nav"))return;const s=document.createElement("span");s.className="sp";s.textContent="✦";s.style.left=e.clientX+"px";s.style.top=e.clientY+"px";document.body.append(s);setTimeout(()=>s.remove(),900)});
+const nav=[...document.querySelectorAll("#nv a")],io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting)nav.forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+en.target.id))}),{rootMargin:"-40% 0px -55% 0px"});
+document.querySelectorAll("header,section").forEach(s=>io.observe(s));
+$("#cp").onclick=async()=>{try{await navigator.clipboard.writeText("RkarryJ0806@gmail.com");$("#cp").textContent="已複製 ✦"}catch(e){location.href="mailto:RkarryJ0806@gmail.com"}};
+</script>
+</body>
+</html>
